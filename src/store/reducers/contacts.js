@@ -12,7 +12,7 @@ export default function contactReducer(state = {}, action)  {
             newState[action.contact.id] = action.contact
             return newState
         case UPDATE:
-            newState[action.conact.id] = action.contact
+            newState[action.contact.id] = action.contact
             return newState
         case REMOVE:
             delete newState[action.contact.id]

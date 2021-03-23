@@ -31,3 +31,11 @@
 .textInputs {
     width: 250px;
 }
+
+.emailDeleteButton {
+    display: none;
+}
+
+.email:hover + .emailDeleteButton, .emailDeleteButton:hover {
+    display: inline-block;
+}

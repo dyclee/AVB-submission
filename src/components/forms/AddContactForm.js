@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
+import { create } from '../../store/actions/contacts';
+import { select } from '../../store/actions/select';
 import { EmailForm } from './EmailForm';
 
 export const AddContactForm = () => {
+    const dispatch = useDispatch();
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [emails, setEmails] = useState([]);
-
-    const selected = useSelector(state => state.selectReducer)
 
     const updateFirstName = (e) => {
         setFirstName(e.target.value);
@@ -27,8 +29,26 @@ export const AddContactForm = () => {
         setEmails([]);
     }
 
-    const create = (e) => {
-
+    const createContact = async (e) => {
+        if (firstName.length === 0 || lastName.length === 0) {
+            alert("Contact must have first and last names.")
+            return;
+        }
+        const createObj = await fetch("https://avb-contacts-api.herokuapp.com/contacts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                firstName,
+                lastName,
+                emails
+            })
+        })
+        if (createObj.ok) {
+            const resObj = await createObj.json();
+            dispatch(create(resObj));
+            dispatch(select(resObj));
+        }
+        return;
     }
 
 
@@ -70,7 +90,7 @@ export const AddContactForm = () => {
                 </div>
                 <div className="rightSideButtons">
                     <button className="sideButton" onClick={cancel}>Cancel</button>
-                    <button className="sideButton" onClick={create}>Create</button>
+                    <button className="sideButton" onClick={createContact}>Create</button>
                 </div>
             </div>
 

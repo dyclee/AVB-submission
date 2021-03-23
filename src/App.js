@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './styling/App.css';
 import './styling/contacts.css';
+import './styling/forms.css';
 import { Dashboard } from './components/Dashboard';
 
 import { useEffect } from 'react';

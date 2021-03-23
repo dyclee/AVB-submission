@@ -4,9 +4,8 @@ export default function selectReducer(state = {}, action)  {
     const newState = {...state};
     switch(action.type) {
         case SELECT:
-            newState["selected"] = action.contact
-            return newState
+            return action.contact
         default:
-            return newState["selected"] = null
+            return null
     }
 }

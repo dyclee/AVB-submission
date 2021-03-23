@@ -64,22 +64,22 @@ export const AddContactForm = () => {
             <div className="formContainer">
                 <div className="inputNames">
                     <div className="inputItem">
-                        <div>First Name:</div>
+                        <div className="inputHeader">First Name:</div>
                         <input className="textInputs" type="text" name="firstName" onChange={updateFirstName} />
                     </div>
                     <div className="inputItem">
-                        <div>Last Name:</div>
+                        <div className="inputHeader">Last Name:</div>
                         <input className="textInputs" type="text" name="lastName" onChange={updateLastName} />
                     </div>
                 </div>
 
                 <div className="inputEmails">
                     <div className="inputItem">
-                        <div>Email</div>
+                        <div className="inputHeader">Email:</div>
                             <ul>
                                 {emails.map((email, index) => {
                                     return (
-                                        <li key={index}>
+                                        <li key={index} className="emailListItem">
                                             <div className="emailContainer">
                                                 <div className="email">
                                                     {email}

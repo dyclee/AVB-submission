@@ -43,6 +43,11 @@
     padding: 30px;
 }
 
+.emailListItem {
+    list-style-type: square;
+    padding: 5px;
+}
+
 .emailFormToggle {
     display: flex;
 }
@@ -56,6 +61,10 @@
     cursor: pointer;
 }
 
+.inputHeader {
+    font-weight: bold;
+    font-size: 17px;
+}
 .textInputs {
     width: 250px;
 }
@@ -77,5 +86,13 @@
 }
 
 .fa-trash {
+    padding-left: 10px;
     color: red;
+}
+.fa-plus {
+    color:cornflowerblue;
+}
+.addEmailText {
+    color: cornflowerblue;
+    cursor: pointer;
 }

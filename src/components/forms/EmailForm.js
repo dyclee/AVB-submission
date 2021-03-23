@@ -28,7 +28,7 @@ export const EmailForm = ({emails, setEmails}) => {
     return (<>
             <div className="emailFormToggle" onClick={hideEmailForm}>
                 <i className="fas fa-plus fa-lg"></i>
-                <div>
+                <div className="addEmailText">
                     {hideForm ?
                         "Add Email"
                     :

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 
 export const EmailForm = ({emails, setEmails}) => {
     const [email, setEmail] = useState("");
+    const [hideForm, setHideForm] = useState(true);
+
+    const hideEmailForm = (e) => {
+        setHideForm(!hideForm);
+    }
 
     const submit = (e) => {
         e.preventDefault();
@@ -21,9 +26,19 @@ export const EmailForm = ({emails, setEmails}) => {
     }
 
     return (<>
-        <form onSubmit={submit}>
+            <div className="emailFormToggle" onClick={hideEmailForm}>
+                <i className="fas fa-plus fa-lg"></i>
+                <div>
+                    {hideForm ?
+                        "Add Email"
+                    :
+                        "Hide"
+                    }
+                </div>
+            </div>
+        <form hidden={hideForm} onSubmit={submit}>
             <input className="textInputs" id="emailInput" type="email" name="email" onChange={addEmail}/>
-            <input type="submit" value="Add" />
+            <input className="emailSubmitButton" type="submit" value="Submit" />
         </form>
     </>)
 }

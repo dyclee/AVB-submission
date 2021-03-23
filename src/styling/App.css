@@ -54,6 +54,17 @@
   margin-right: auto;
   width: 800px;
   height: 600px;
-  border: 5px solid red;
+  border: 5px solid black;
   display: flex;
+}
+
+.fas {
+  padding: 3px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+i:hover {
+  cursor: pointer;
 }

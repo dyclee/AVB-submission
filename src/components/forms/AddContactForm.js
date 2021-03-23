@@ -29,6 +29,13 @@ export const AddContactForm = () => {
         setEmails([]);
     }
 
+    const removeEmail = (e) => {
+        let idx = e.target.value;
+        let newArr = [...emails]
+        newArr.splice(idx, 1);
+        setEmails(newArr);
+    }
+
     const createContact = async (e) => {
         if (firstName.length === 0 || lastName.length === 0) {
             alert("Contact must have first and last names.")
@@ -73,8 +80,13 @@ export const AddContactForm = () => {
                                 {emails.map((email, index) => {
                                     return (
                                         <li key={index}>
-                                            <div className="email">
-                                                {email}
+                                            <div className="emailContainer">
+                                                <div className="email">
+                                                    {email}
+                                                </div>
+                                                <div className="emailDeleteButton" value={index} onClick={removeEmail}>
+                                                    <i className="fas fa-trash fa-lg"></i>
+                                                </div>
                                             </div>
                                         </li>
                                     )
@@ -86,11 +98,11 @@ export const AddContactForm = () => {
             </div>
             <div className="formButtons">
                 <div className="leftSideButtons">
-                    <button className="sideButton" disabled={true} >Delete</button>
+                    <button className="sideButton deleteButton" disabled={true} >Delete</button>
                 </div>
                 <div className="rightSideButtons">
-                    <button className="sideButton" onClick={cancel}>Cancel</button>
-                    <button className="sideButton" onClick={createContact}>Create</button>
+                    <button className="sideButton cancelButton" onClick={cancel}>Cancel</button>
+                    <button className="sideButton saveButton" onClick={createContact}>Create</button>
                 </div>
             </div>
 

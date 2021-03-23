@@ -1,7 +1,7 @@
 /* Contact List Styling */
 .contactsContainer {
-    background-color: aliceblue;
-    border: 2px solid blue;
+    box-sizing: content-box;
+    border-right: 3px solid black;
     height: 100%;
     width: 200px;
     display: flex;
@@ -10,6 +10,8 @@
 }
 
 .contactsHeader {
+    background-color: black;
+    color: white;
     height: 100px;
     width: 100%;
     display: flex;
@@ -25,16 +27,27 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.addContact {
+/* .addContact {
     height: 30px;
-}
+} */
 
 .contactList {
     width: 100%;
     padding: 5px;
     overflow-y: scroll;
     box-sizing: border-box;
+    border: 2px solid lightgray;
+    background-color: black;
+    color: white;
 }
 .contactListItem {
     padding: 3px;
+}
+.contactListItem:hover {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: white;
+    color: black;
 }

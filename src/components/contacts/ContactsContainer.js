@@ -14,7 +14,9 @@ export const ContactsContainer = () => {
         <div className="contactsContainer">
             <div className="contactsHeader">
                 <h3 className="contactsTitle">Contacts</h3>
-                <button className="addContact" onClick={addContact}>Add</button>
+                <div className="addContact" onClick={addContact}>
+                    <i className="fas fa-plus-circle fa-2x"></i>
+                </div>
             </div>
             <ContactList />
         </div>

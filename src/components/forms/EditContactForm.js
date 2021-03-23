@@ -98,10 +98,14 @@ export const EditContactForm = () => {
                                 {emails.map((email, index) => {
                                     return (
                                         <li key={index}>
-                                            <div className="email">
-                                                {email}
+                                            <div className="emailContainer">
+                                                <div className="email">
+                                                    {email}
+                                                </div>
+                                                <div className="emailDeleteButton" value={index} onClick={removeEmail}>
+                                                    <i className="fas fa-trash fa-lg"></i>
+                                                </div>
                                             </div>
-                                            <button className="emailDeleteButton" value={index} onClick={removeEmail}>DELETE</button>
                                         </li>
 
                                     )
@@ -113,11 +117,11 @@ export const EditContactForm = () => {
             </div>
             <div className="formButtons">
                 <div className="leftSideButtons">
-                    <button className="sideButton" onClick={removeContact}>Delete</button>
+                    <button className="sideButton deleteButton" onClick={removeContact}>Delete</button>
                 </div>
                 <div className="rightSideButtons">
-                    <button className="sideButton" onClick={cancel}>Cancel</button>
-                    <button className="sideButton" onClick={updateContact}>Save</button>
+                    <button className="sideButton cancelButton" onClick={cancel}>Cancel</button>
+                    <button className="sideButton saveButton" onClick={updateContact}>Save</button>
                 </div>
             </div>
 

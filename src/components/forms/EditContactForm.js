@@ -47,6 +47,10 @@ export const EditContactForm = () => {
     }
 
     const cancel = async (e) => {
+        let inputs = document.getElementsByClassName("textInputs")
+        for (const ele of inputs) {
+            ele.value = ""
+        }
         const resetSelected = await fetch (`https://avb-contacts-api.herokuapp.com/contacts/${selected.id}`)
         const resObj = await resetSelected.json();
         dispatch(select(resObj));

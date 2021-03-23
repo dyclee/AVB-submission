@@ -1,5 +1,15 @@
 .App {
-  text-align: center;
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .App-logo {
@@ -35,4 +45,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* dashboard */
+.dashboard {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  height: 600px;
+  border: 5px solid red;
 }

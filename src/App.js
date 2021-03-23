@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './styling/App.css';
+import './styling/contacts.css';
 import {Dashboard} from './components/Dashboard';
 
 function App() {

@@ -1,0 +1,40 @@
+/* Contact List Styling */
+.contactsContainer {
+    background-color: aliceblue;
+    border: 2px solid blue;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactsHeader {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+.contactsTitle {
+    font-size: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.addContact {
+    height: 30px;
+}
+
+.contactList {
+    width: 100%;
+    padding: 5px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+.contactListItem {
+    padding: 3px;
+}

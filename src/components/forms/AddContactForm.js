@@ -62,6 +62,7 @@ export const AddContactForm = () => {
     return (<>
         <div className="form">
             <div className="formContainer">
+                <div className="formHeader">CREATE</div>
                 <div className="inputNames">
                     <div className="inputItem">
                         <div className="inputHeader">First Name:</div>
@@ -98,7 +99,7 @@ export const AddContactForm = () => {
             </div>
             <div className="formButtons">
                 <div className="leftSideButtons">
-                    <button className="sideButton deleteButton" disabled={true} >Delete</button>
+                    <button className="sideButton deleteButton disable" disabled={true} >Delete</button>
                 </div>
                 <div className="rightSideButtons">
                     <button className="sideButton cancelButton" onClick={cancel}>Cancel</button>

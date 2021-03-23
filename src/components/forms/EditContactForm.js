@@ -83,6 +83,7 @@ export const EditContactForm = () => {
     return (<>
         <div className="form">
             <div className="formContainer">
+                <div className="formHeader">EDIT</div>
                 <div className="inputNames">
                     <div className="inputItem">
                         <div className="inputHeader">First Name:</div>

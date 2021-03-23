@@ -3,6 +3,13 @@
     height: 300px;
 }
 
+.formHeader {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .formButtons {
     display: flex;
     justify-content: space-between;
@@ -22,6 +29,9 @@
 
 .deleteButton {
     background-color: lightcoral;
+}
+.disable {
+    opacity: .5;
 }
 
 .cancelButton {
@@ -67,6 +77,7 @@
 }
 .textInputs {
     width: 250px;
+    font-size: 18px;
 }
 
 .textInputs:focus {

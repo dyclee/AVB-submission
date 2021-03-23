@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { StaticRouter } from 'react-router';
 
 export const EmailForm = ({emails, setEmails}) => {
     const [email, setEmail] = useState("");
     const [hideForm, setHideForm] = useState(true);
+
+    const selected = useSelector(state => state.selectReducer);
+
+    useEffect(() => {
+        setHideForm(true);
+    }, [selected])
 
     const hideEmailForm = (e) => {
         setHideForm(!hideForm);

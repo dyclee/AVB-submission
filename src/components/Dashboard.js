@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactsContainer } from './ContactsContainer';
+import { ContactsContainer } from './contacts/ContactsContainer';
 
 export const Dashboard = () => {
     return (

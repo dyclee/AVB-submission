@@ -1,28 +1,30 @@
 // import logo from './logo.svg';
 import './styling/App.css';
 import './styling/contacts.css';
-import {Dashboard} from './components/Dashboard';
+import { Dashboard } from './components/Dashboard';
+
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getContacts } from './store/actions/contacts';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    (async () => {
+        const res = await fetch(`https://avb-contacts-api.herokuapp.com/contacts/paginated`)
+        const obj = await res.json();
+        if (obj.contacts.length) {
+            dispatch(getContacts(obj.contacts))
+        }
+    })()
+},[])
+
   return (
     <div className="App">
       <div className="middle">
         <Dashboard />
       </div>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Re
-        </a>
-      </header> */}
     </div>
   );
 }
